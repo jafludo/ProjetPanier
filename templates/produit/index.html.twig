@@ -4,14 +4,23 @@
 
 {% block body %}
 <div class="container">
-    <h3>Liste des produits :</h3>
-    <ul>
+    <h3 style="text-align: center;">Liste des produits</h3>
+    <table class="table">
+        <tr>
+            <th>Name</th>
+            <th>Quantite</th>
+            <th>Prix</th>
+            <th>Suppression</th>
+        </tr>
         {% for produit in produits %}
-            <li>Name : {{produit.name}} Quantite : {{produit.quantite}} Prix :  {{produit.prix}}
-                <bouton class="btn btn-outline-primary"><a href="{{ path('produit', {id: produit.id}) }}">Voir plus</a></bouton>
-            </li>
+            <tr>
+                <th scope="col">{{produit.name}} </th>
+                <th scope="col">{{produit.quantite}} </th>
+                <th scope="col">{{produit.prix}}</th>
+                <th scope="col"><bouton class="btn btn-outline-primary"><a href="{{ path('produit', {id: produit.id}) }}">Voir plus</a></bouton></th>
+            </tr>
         {% endfor %}
-    </ul>
+    </table>
     <div class="mt-3">
         {{form_start(form)}}
         {{form_end(form)}}

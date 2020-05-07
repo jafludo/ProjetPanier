@@ -17,7 +17,7 @@ class ProduitType extends AbstractType
             ->add('photo')
             ->add('quantite')
             ->add('prix')
-            ->add('submit',SubmitType::class)
+            ->add('submit',SubmitType::class, ["attr" => ["class" => "btn btn-primary"]])
         ;
     }
 

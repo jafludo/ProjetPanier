@@ -16,7 +16,7 @@ class PanierType extends AbstractType
             ->add('quantite')
             //->add('createAt')
             //->add('etat')
-            ->add('submit',SubmitType::class)
+            ->add('submit',SubmitType::class, ["attr" => ["class" => "btn btn-primary"]])
         ;
     }
 

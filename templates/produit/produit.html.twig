@@ -4,14 +4,25 @@
 
 {% block body %}
 <div class="container">
+<table class="table">
+    <tr>
+        <th>Name</th> 
+        <th>Photo</th>
+        <th>Quantite</th> 
+        <th>Prix</th>
+        <th>Suppression</th>
+    </tr>
+    <tr>
+        <th>{{produit.name}}</th> 
+        <th>{{produit.photo}} </th>
+        <th>{{produit.quantite}}</th> 
+        <th>{{produit.prix}}</th>
+        <th><a href="{{ path('deleteproduit', {id: produit.id})}}" class="btn btn-outline-primary">Supprimer</a></th>
+    </tr>
+</table>
 
-<li>
-     Name : {{produit.name}} 
-     Photo : {{produit.photo}} 
-     Quantite : {{produit.quantite}} 
-     Prix : {{produit.prix}}
-</li>
-<a class="danger" href="{{ path('deleteproduit', {id: produit.id})}}">Supprimer</a>
+
+
 <p>Ajouter au Panier :</p>
 <div class="mt-3">
     {{form_start(form)}}
