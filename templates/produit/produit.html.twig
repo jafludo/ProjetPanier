@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Produit !{% endblock %}
+
+{% block body %}
+<div class="container">
+
+<li>
+     Name : {{produit.name}} 
+     Photo : {{produit.photo}} 
+     Quantite : {{produit.quantite}} 
+     Prix : {{produit.prix}}
+</li>
+<a class="danger" href="{{ path('deleteproduit', {id: produit.id})}}">Supprimer</a>
+<p>Ajouter au Panier :</p>
+<div class="mt-3">
+    {{form_start(form)}}
+    {{form_end(form)}}
+</div>
+</div>
+{% endblock %}
